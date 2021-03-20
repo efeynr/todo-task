@@ -15,7 +15,7 @@ function App() {
         setTodoItems(data);
       });
     }
-  }, [todoItems]);
+  }, []);
     //ternary operator
 
 
@@ -25,7 +25,8 @@ function App() {
             headers: {
               'content-type' : 'application/json'
             },
-            method:'POST'
+            method:'POST',
+            body:JSON.stringify(todoItems[(todoItems.length)-1])
           })
           .then((response)=> response.json())
           .then((data)=>{

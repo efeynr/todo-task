@@ -8,19 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 //@Repository("couchbase")
-@Repository("couchbase")
+@Repository
 
 public interface TodoDao extends CouchbaseRepository<Todo,Integer> {
-/*
 
-     Todo createTask(Todo todo);
-
-     List<Todo> selectAll(); //to print the database
-
-    Optional<Todo> selectTaskById(Integer id);  //Optional yerine List kullanmayı düşünebilirsin
-
-    int deleteTaskById(Integer id);
-
-    void updateTaskById(int id, Todo todo);
-*/
 }

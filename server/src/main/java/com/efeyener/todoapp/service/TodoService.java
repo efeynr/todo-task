@@ -11,13 +11,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Service
 public class TodoService {
+ /*
     private final TodoFakeDao todoDao;
 
-    @Autowired // we are autowiring into TodoDao interface (inject)
+    //@Autowired // we are autowiring into TodoDao interface (inject)
 
-    public TodoService(@Qualifier("fakeDao") TodoFakeDao todoDao) { //TodoDao türü yap Qualifier'ı değiş
+    public TodoService(@Qualifier("fakeDao")  TodoFakeDao todoDao) { //TodoDao türü yap Qualifier'ı değiş
             this.todoDao = todoDao;
     }
 
@@ -52,7 +53,7 @@ public class TodoService {
         }
         return null;
     }
-
+*/
 }
 
 

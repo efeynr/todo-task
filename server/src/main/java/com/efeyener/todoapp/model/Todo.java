@@ -4,11 +4,13 @@ import org.springframework.data.couchbase.core.mapping.Document;
 import org.springframework.data.couchbase.core.mapping.Field;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Document
 public class Todo {
     @Id
-    private Integer id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id; //
     @Field
     private String taskName;
     @Field
@@ -28,6 +30,10 @@ public class Todo {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getTaskName() {
         return taskName;
     }
@@ -36,9 +42,7 @@ public class Todo {
         return status;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+
 
     public void setTaskName(String taskName) {
         this.taskName = taskName;

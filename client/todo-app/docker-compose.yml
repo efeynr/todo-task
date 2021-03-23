@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+    couchbase:
+        image: couchbase
+        ports:
+            - 9091:8091
+            - 9092:8091
+        environment:
+            - COUCHBASE_ADMINISTRATOR_USERNAME=admincik
+            - COUCHBASE_ADMINISTRATOR_PASSWORD=password
+            - COUCHBASE_BUCKET=todoApp
+            - COUCHBASE_BUCKET_PASSWORD=
+
+    spring-boot:
+        image: todo-app
+        ports:
+            - 8080:8080
+        environment:
+            - COUCHBASE_HOST=couchbase
+            - COUCHBASE_BUCKET=todoApp
+            - COUCHBASE_BUCKET_PASSWORD=
+        restart: always
+
+    
+    web:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        stdin_open: true    
+        ports:
+            - "3000:3000"
+        volumes:
+            - /app/node_modules
+            - .:/app     
